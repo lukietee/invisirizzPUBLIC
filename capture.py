@@ -87,12 +87,12 @@ while True:
     results = pose.process(rgb_frame)
 
     # Draw pose landmarks if detected
-    #if results.pose_landmarks:
-    #    mp_drawing.draw_landmarks(
-    #        frame, results.pose_landmarks, mp_pose.POSE_CONNECTIONS,
-    #        landmark_drawing_spec=mp_drawing.DrawingSpec(color=(0, 255, 0), thickness=2, circle_radius=3),
-    #        connection_drawing_spec=mp_drawing.DrawingSpec(color=(255, 0, 0), thickness=2)
-    #    )
+    if results.pose_landmarks:
+        mp_drawing.draw_landmarks(
+            frame, results.pose_landmarks, mp_pose.POSE_CONNECTIONS,
+            landmark_drawing_spec=mp_drawing.DrawingSpec(color=(0, 255, 0), thickness=2, circle_radius=3),
+            connection_drawing_spec=mp_drawing.DrawingSpec(color=(255, 0, 0), thickness=2)
+        )
 
     cv2.imshow("OBS Virtual Camera Feed", frame)
 
